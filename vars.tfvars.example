@@ -1,0 +1,15 @@
+// consul Variables \\
+consul_count = 3
+
+// DigitalOcean Variables \\
+image = "centos-8-x64"
+region = "sfo2"
+size = "s-1vcpu-2gb"
+
+// Linux Variables \\
+ssh_user = "root"
+ssh_key = "~/.ssh/id_rsa"
+
+// DNS Variables \\
+domain = "consul.malikiah.io"
+service-port = "8080"

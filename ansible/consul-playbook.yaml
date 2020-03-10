@@ -1,0 +1,22 @@
+- name: AWX-Ansible
+  connection: ssh
+  become: yes
+  gather_facts: false
+  hosts: all
+  tasks:
+    - name: Template a file to /etc/files.conf
+      template:
+        src: templates/consul.json.j2
+
+        dest: /usr/local/etc/consul/consul_s.json
+
+    - name: Check Admin temp password
+      become: yes
+      command: /bin/cat /usr/local/etc/consul/
+      register: cat 
+      changed_when: False
+
+    - name: Print SSH public key
+      debug: var=cat.stdout
+
+
